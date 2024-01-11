@@ -1,0 +1,6 @@
+My northeastern username: gajapathy.s
+My Github username: gajapathy-s
+
+I have sucessfully installed Ubuntu 20.04 LTS and ROS Noetic
+
+I am ready to use Git and GitHub
