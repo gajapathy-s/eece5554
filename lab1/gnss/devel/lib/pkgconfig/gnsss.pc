@@ -1,0 +1,8 @@
+prefix=/home/sri/gnss/devel
+
+Name: gnsss
+Description: Description of gnsss
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
