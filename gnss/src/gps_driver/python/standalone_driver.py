@@ -144,7 +144,7 @@ try:
                      if title == "$GPGGA":
                             GPS_pub.publish(cmsg)
                             rospy.loginfo("Published message: %s", cmsg)
-                            bag.write("chatter", cmsg)
+                            bag.write("gps", cmsg)
                            
                             rospy.sleep(sleep_time)
                 
