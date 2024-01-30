@@ -33,7 +33,7 @@ def GPGGA(gpgga_string):
     [CurrentTime,CurrentTimeNsec]=UTC_to_Epoc(cmsg.UTC)
     cmsg.header.frame_id = 'GPS1_Frame'
     cmsg.header.stamp.secs =int(CurrentTime)
-    cmsg.header.stamp.nsecs=int(CurrentTimeNsec)
+    cmsg.header.stamp.nsecs=int(round(CurrentTimeNsec,2))
     # cmsg.header.stamp=rospy.Time.now()
     
  
