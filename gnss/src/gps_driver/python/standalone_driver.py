@@ -110,7 +110,7 @@ if __name__ == '__main__':
     
     rospy.sleep(0.2)  
     
-    GPS_pub = rospy.Publisher("gps", Customgps, queue_size=10)
+    GPS_pub = rospy.Publisher("/gps", Customgps, queue_size=10)
     rate = rospy.Rate(10)
     bag = rosbag.Bag(bag_filename, 'w')
     
@@ -144,7 +144,7 @@ try:
                      if title == "$GPGGA":
                             GPS_pub.publish(cmsg)
                             rospy.loginfo("Published message: %s", cmsg)
-                            bag.write("gps", cmsg)
+                            bag.write("/gps", cmsg)
                            
                             rospy.sleep(sleep_time)
                 
