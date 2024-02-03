@@ -76,13 +76,20 @@ def lat_long_to_utm(Lat, Long):
    
 def UTC_to_Epoc(UTC):
 
-    cdt = datetime.now()
-    bod = cdt.replace(hour=0, minute=0, second=0, microsecond=0)
-    TimeSinceEpochBOD= int(bod.timestamp())
+    hours = int(UTC // 10000)
+    minutes = int((UTC % 10000) // 100)
+    seconds = UTC % 100
+    UTCinSecs = hours * 3600 + minutes * 60 + seconds
+    
+    currentTime = time.gmtime()
 
-    CurrentTime = TimeSinceEpochBOD + int(UTC)
+    TimeSinceEpochBOD = time.mktime(currentTime[:3] + (0, 0, 0) + currentTime[6:])
+ 
+    CurrentTime = TimeSinceEpochBOD + UTCinSecs - time.timezone 
+
     UTC_sec= UTC-int(UTC)
-    CurrentTimeNsec = int( UTC_sec * 1e9)
+    
+    CurrentTimeNsec = int( round((UTC_sec),2) * 1e9)
     
     return [CurrentTime, CurrentTimeNsec]
            
