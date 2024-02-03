@@ -1,5 +1,5 @@
 <launch>
-  <node name="gps_node" pkg="gps_driver" type="standalone_driver.py" output="screen">
+  <node name="Standalone_driver" pkg="gps_driver" type="standalone_driver.py" output="screen">
     <param name="port" type="string" value="$(arg port)"/>
     <param name="baudrate" type="int" value="4800"/>
     <param name="sampling_rate" type="double" value="5.0"/>
